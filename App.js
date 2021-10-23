@@ -1,21 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import Header from './components/Header';
+import Formulario from './components/Formulario';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Crypto!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <Header />
+
+      <Image
+        style={styles.imagen}
+        source={require('./assets/img/cryptomonedas.png')}
+      />
+
+      <View style={styles.contenido}>
+        <Formulario />
+      </View>
+
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  imagen: {
+    width: '100%',
+    height: 150,
+    marginHorizontal: '2.5%'
   },
+  contenido: {
+    marginHorizontal: '2.5%'
+  }
 });
